@@ -21,6 +21,12 @@ function StringToDate(st) {
 		return new Date();
 	return new Date(vals[2], parseInt(vals[0]) - 1, vals[1]);
 }
+function StringToTime(st) {
+	var vals = st.split(':');
+	if (vals.length != 3)
+		return new Date();
+	return new Date(0,0,0,vals[0],vals[1],vals[2]);
+}
 //progress
 function StartProgress(txt) {
 	//doing some cleanup of old progress - some functions may fail leaving progress messages
