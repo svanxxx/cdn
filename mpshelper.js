@@ -44,6 +44,9 @@ function StartProgress(txt) {
 	$("#" + uuid).css({ bottom: min });
 	return uuid;
 }
+function inProgress() {
+	return $(".loadingprogress").length > 0;
+}
 function EndProgress(id) {
 	$("#" + id).remove();
 }
