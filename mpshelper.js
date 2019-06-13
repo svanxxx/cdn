@@ -14,9 +14,15 @@ function pad(num, size) {
 	return s;
 }
 function DateToString(dt) {
+	if (dt == null) {
+		return "";
+	}
 	return pad((dt.getMonth() + 1), 2) + "-" + pad(dt.getDate(), 2) + "-" + dt.getFullYear();
 }
 function StringToDate(st) {
+	if (st === "") {
+		return null;
+	}
 	var vals = st.split('-');
 	if (vals.length != 3)
 		return new Date();
