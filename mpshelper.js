@@ -34,6 +34,15 @@ function StringToTime(st) {
 		return new Date();
 	return new Date(0,0,0,vals[0],vals[1],vals[2]);
 }
+function StringToDateTime(st) {
+	var parts = st.split(" ");
+	var date = StringToDate(parts[0]);
+	var time = StringToTime(parts[1]);
+	date.setHours(time.getHours());
+	date.setMinutes(time.getMinutes());
+	date.setSeconds(time.getSeconds());
+	return date;
+}
 //progress
 function StartProgress(txt) {
 	//doing some cleanup of old progress - some functions may fail leaving progress messages
